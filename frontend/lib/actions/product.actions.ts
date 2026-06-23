@@ -1,6 +1,4 @@
-
 import { GetProductsQuery } from '../../../types/api'
-import { Product } from '../../../types/product'
 
 export const getProducts = async (query: GetProductsQuery) => {
     const params = new URLSearchParams();
@@ -14,7 +12,7 @@ export const getProducts = async (query: GetProductsQuery) => {
     }
   
     const res = await fetch(
-      `http://localhost:3001/products?${params.toString()}`
+      `${process.env.NEXT_PUBLIC_API_URL}/products?${params.toString()}`
     );
   
     return await res.json();
