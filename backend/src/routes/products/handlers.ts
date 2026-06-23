@@ -1,6 +1,6 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
-import { getProducts } from "src/services/product-service";
-import { GetProductsQuery } from "../../../../types/api"
+import { getProducts } from "../../services/product-service";
+import { GetProductsQuery } from "../../types/api";
 
 export const getProductsHandler = async (request: FastifyRequest<{ Querystring: GetProductsQuery }>, reply: FastifyReply) => {
     const { category, cursor } = request.query

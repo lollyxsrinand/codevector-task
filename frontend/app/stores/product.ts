@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Product } from "../../../types/product";
+import { Product } from "../../../backend/src/types/product";
 
 type CachedPage = {
   products: Product[];

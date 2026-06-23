@@ -1,5 +1,5 @@
-import { supabase } from "src/lib/supabase"
-import { Product } from "../../../types/product"
+import { supabase } from "../lib/supabase"
+import { Product } from "../types/product"
 
 export const getProducts = async ({ limit, category, cursor }: { limit: number, category?: string, cursor?: string }) => {
 	let query = supabase
@@ -14,7 +14,9 @@ export const getProducts = async ({ limit, category, cursor }: { limit: number, 
 	if (cursor) {
 		const decodedCursor = decodeURIComponent(cursor)
 		const [updated_at, id] = decodedCursor.split("_")
-		query = query.or(`updated_at.lt.${updated_at},and(updated_at.eq.${updated_at}), id.lt.${id})`)
+		query = query.or(
+			`updated_at.lt.${updated_at},and(updated_at.eq.${updated_at},id.lt.${id})`
+		  )
 	}
 
 	query = query
