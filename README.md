@@ -120,16 +120,19 @@ frontend/
     lib/
     types/
 ```
+- `backend/script/seed.ts` has the seeding script
+- `backend/services/` contains db operations file
+- `backend/routes/` defines routes and it's handlers
+
 ---
 
 # What I'd Improve
 
 Given more time, I would:
 
+* Extend API to manually add/edit/delete products
+* Use a monorepo to share the `types/` between frontend and backend for consistency
+* Measure API fetch times, display API stats and compare with time complexity in theory
 * Add additional filters (price range, search, date range)
-* Add testing units
-* Improve frontend UI/UX
-* Add request validation and rate limiting
-* I think I could handle the frontend rendering logic in simpler ways
-
+* Improve frontend UI/UX and rendering techniques
 ---
