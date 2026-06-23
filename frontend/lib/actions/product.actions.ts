@@ -1,4 +1,4 @@
-import { GetProductsQuery } from '../../../backend/src/types/api'
+import { GetProductsQuery } from "../../types/api"
 
 export const getProducts = async (query: GetProductsQuery) => {
     const params = new URLSearchParams();
