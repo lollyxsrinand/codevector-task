@@ -14,8 +14,7 @@ const app = Fastify({ logger: false })
 
 const registerCors = async () => {
   await app.register(cors, {
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://codevector-task-lime.vercel.app/'],
-    credentials: true,
+    origin: '*',
   });
 }
 registerCors()
